@@ -1,0 +1,47 @@
+  
+#include <stdio.h>
+#include <stdio.h>
+#include <locale.h>
+#include <cstdlib>
+struct pessoas {
+	char sexo;
+	float peso;	
+};
+main (){
+	float peso=0, media=0, total=0, pmaior=0, pmenor=1000;
+	int qtd60_80=0, mulheres=0;
+	char sexo[1];
+	struct pessoas a[10];
+		for (int i = 0; i < 10; i++){
+		printf ("\nDigite o PESO e o SEXO (letra maiúscula) da pessoa:\n ");
+		scanf("%f%s",&a[i].peso,&a[i].sexo);
+		//printf ("\nDigite o SEXO da pessoa: ");
+		//scanf ("%s",&a[i].sexo);
+				
+		if (a[i].sexo == 'F' || 'f'){
+			mulheres++;
+			if (a[i].peso>=60 && a[i].peso<=80){
+			    qtd60_80++;
+	}
+		    if (a[i].peso > pmaior){
+			    pmaior = a[i].peso;
+	}
+	        if (a[i].peso < pmenor){
+			    pmenor = a[i].peso;
+	}
+		total = total + a[i].peso;
+		media = total / mulheres;
+		} 		
+	}
+		
+	printf ("\n Peso medio das mulheres: %2.f", media);
+	printf ("\n O peso maior das mulheres: %2.f", pmaior);
+	printf ("\n O peso menor das mulheres: %2.f", pmenor);
+	printf ("\n A quantidade de mulheres com peso entre de 60 80 kg:  %d", qtd60_80);
+	printf ("\n");
+	printf ("\n");
+
+
+	system("pause");
+    return 0;
+}
